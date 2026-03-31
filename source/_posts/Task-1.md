@@ -2,6 +2,7 @@
 title: Task 1
 date: 2026-03-31 14:58:00
 tags: 做题记录
+mathjax: true
 ---
 
 三月做题记录。
