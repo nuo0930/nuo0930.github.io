@@ -131,10 +131,12 @@ home_banner:
   style: fixed # static or fixed
   # Home banner image
   image: 
-    light: /images/wallhaven-wqery6-light.webp # light mode
-    dark: /images/wallhaven-wqery6-dark.webp # dark mode
+    # light: /images/wallhaven-wqery6-light.webp # light mode
+    # dark: /images/wallhaven-wqery6-dark.webp # dark mode
+    light: /images/crychic.png
+    dark: /images/crychic.png
   # Home banner title
-  title: Theme Redefine
+  title: Crychic
   # Home banner subtitle
   subtitle:
     text: [] # subtitle text, array
