@@ -175,7 +175,6 @@ home_banner:
       - "あぁ なんて眩しいんだろう"
       - "あぁ なんて美しいんだろう..."
       - "ずっと ずっと 離さないでいて"
-      - "なんで『春日影』やったの！？"
     hitokoto:  # 一言配置
       enable: false # Whether to enable hitokoto
       show_author: false # Whether to show author
