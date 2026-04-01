@@ -15,7 +15,7 @@ mathjax: true
 
 ### Solution
 
-{% folding green::Sol %}
+{% folding title="Sol" class="green" open=false %}
 
 首先对零入度强连通分量做 DAG 容斥可以预处理出每个点集的生成子强连通图个数。
 
@@ -33,7 +33,7 @@ mathjax: true
 
 ### Solution
 
-{% folding green::Sol %}
+{% folding title="Sol" class="green" open=false %}
 
 怒写 6.7k 代码通过。
 
@@ -57,7 +57,7 @@ mathjax: true
 
 ### Solution
 
-{% folding green:: Sol %}
+{% folding title="Sol" class="green" open=false %}
 
 对称 FWT 即可。
 
@@ -71,7 +71,7 @@ mathjax: true
 
 ### Solution
 
-{% folding green:: Sol %}
+{% folding title="Sol" class="green" open=false %}
 
 先考虑如何数一个串中小于 $s$ 的子串个数，你试图扫描线，不妨让一个子串被数到当且仅当经过第一个不同的位置（或者末尾），也就说明你只需要关心 $l$ 是后面还有多少个，以及已经填过的前缀中与 $s$ 某个前缀相等的最长后缀长度，是否 $s$ 已经出现和当前已经确定的小于 $s$ 的子串个数。我们调整下可以证明若存在 $t$ 则最短的 $\lvert t\rvert$ 不超过 $2k$（考虑称满足 $\forall j\leq i,\, t[j,i]\geq s$ 的 $i$ 为关键点，则一定有任意包含关键点的区间不造成贡献，而且 $s$ 的一次出现一定满足除去最后一位均为非关键点，因此极小的方案不能有相邻两个关键点，开头也不能是关键点，而至多 $k$ 个非关键点，因此得证），所以状态数是 $\mathcal{O}(nk^2)$ 的，而且转移只用枚举填 $0$ 还是 $1$，转移边数与点数同阶。
 
@@ -106,7 +106,7 @@ TL: $8$s
 
 ### Solution
 
-{% folding green:: Sol%}
+{% folding title="Sol" class="green" open=false %}
 
 分块，对于每个块对于所有值维护一个并查集，可以做到以最大值减少量次并查集操作的整块修改。
 
@@ -124,7 +124,7 @@ TL: 10s
 
 ### Solution
 
-{% folding green:: Sol%}
+{% folding title="Sol" class="green" open=false %}
 
 把每一种数对区间的贡献放在其第一次出现上，因此每个 $i$ 对所有 $pre_i<l\leq i\leq r$ 的区间的权值造成了 $1$ 的贡献，其中 $pre_i$ 是 $a_i$ 上一次出现位置。
 
@@ -166,7 +166,7 @@ TL: 10s
 
 ### Solution
 
-{% folding green:: Sol%}
+{% folding title="Sol" class="green" open=false %}
 
 做一个回滚莫队，你发现每一轮，你的右指针从左往右扫的过程中使用启发式合并，总复杂度还是 $\mathcal{O}(n\log n)$ 的，然后你需要保证一个块内总代价不大，我们可以发现维护了 $(l,r]$ 的信息后插入的 $l$ 的代价一定不大于维护了 $(l,n]$ 的信息后插入 $l$，以这个为权值加权分块即可，权值总和是 $\mathcal{O}(n\log n)$，扫右指针一轮的 $\mathcal{O}(n\log n)$，因此总复杂度为 $\mathcal{O}(n\sqrt m\log n)$。
 
@@ -191,7 +191,7 @@ $1\leq t\leq 10,\;1\leq n\leq 10^3,\;0\leq k\leq 100$
 
 ### Solution
 
-{% folding green:: Sol%}
+{% folding title="Sol" class="green" open=false %}
 
 考虑事实上操作间可交换，于是要求先 $1$ 后 $2$，也就是目标是通过若干次 $1$ 操作使得序列中每一项要么是 $0$ 要么不小于 $2$。
 
@@ -219,7 +219,7 @@ TL: 2s
 
 ### Solution
 
-{% folding green:: Sol%}
+{% folding title="Sol" class="green" open=false %}
 
 不难发现如果是判定一个点是否可以以它开始走出这个 dfs 树就是检查是不是没有横叉边。
 
@@ -253,7 +253,7 @@ TL: 4s
 
 ### Solution
 
-{% folding green: Sol%}
+{% folding title="Sol" class="green" open=false %}
 
 不难发现发现合法的 $k$ 是一段后缀，因此先考虑如下问题：在前 $i$ 轮获得了 $A_i$ 个 $0$ 与 $B_i$ 个 $1$。
 
@@ -262,6 +262,7 @@ TL: 4s
 设你在第 $i$ 轮是否是删除了两个 $0$ 的状态是 $c_i$，$\{c_i\}$ 的前缀和是 $\{C_i\}$。
 
 那么你的限制是：
+
 $$
 \begin{aligned}
 \forall 1\leq i\leq n,\;&C_{i-1}\leq C_i\\
@@ -270,7 +271,9 @@ $$
 \forall 0\leq i\leq n,\;&B_i-i+C_i\geq0
 \end{aligned}
 $$
+
 于是考虑差分约束，把后两个式子中的 $C_i$ 替换为 $C_i-C_0$ 就好了，判断是否有解就是检查是否无负环。具体来说我们写成标准型是：
+
 $$
 \begin{aligned}
 \forall 1\leq i\leq n,\;&C_{i-1}-C_i\leq0\\
@@ -284,6 +287,7 @@ $$
 这张图上的负权边只有可能由后两种边提供，都一定经过 $0$，而只经过前两种边的话从 $x$ 走到 $y$ 的距离是 $\max\{0,\lceil\frac{y-x}{z}\rceil\}$。
 
 因此我们只需要保证
+
 $$
 \begin{aligned}
 \forall 0\leq i\leq n,\;&A_i-i\geq 0\\
@@ -292,7 +296,9 @@ $$
 \forall 0\leq l\leq r\leq n,\;&A_r-r+B_l-l\geq0
 \end{aligned}
 $$
+
 这里每个式子至多出现一个向上取整，因此可以通过把 $\geq 0$ 改成 $>-1$ 来消掉，然后再两边同时乘 $z$，变为：
+
 $$
 \begin{aligned}
 \forall 0\leq i\leq n,\;&A_i-i\geq 0\\
@@ -301,6 +307,7 @@ $$
 \forall 0\leq l\leq r\leq n,\;&A_r-r+B_l-l\geq0
 \end{aligned}
 $$
+
 对 $A,B$ 做区间加也都是可以通过线段树容易维护出最小值的，而且你注意到对于同奇偶的 $k$ 来说 $x+A,y+B$ 的变化只是平移，因此你可以直接线段树上二分来解决，时间复杂度 $\mathcal{O}(n+q\log n)$。
 
 {% endfolding %}
@@ -319,7 +326,7 @@ TL: 1s
 
 ### Solution
 
-{% folding green:: Sol%}
+{% folding title="Sol" class="green" open=false %}
 
 首先发现如果保证父亲结点标号小于自己的话，也就是说拓扑序是 $1\sim n$，我们可以先倒着扫描更新出每个子树大小，再正着扫算出每个结点的 dfs 序编号，然后这时候父亲数组就没用了，直接用它作为临时数组对编号序列求逆得到 dfs 序序列。
 
@@ -341,15 +348,15 @@ ML: 1GiB
 
 ### Solution
 
-{% folding green:: Sol%}
+{% folding title="Sol" class="green" open=false %}
 
-{% folding blue:: Hofflman 定理%}
+{% callout type="info" title="霍夫曼定理" %}
 
 > 有 $n$ 个源点和 $m$ 个汇点，第 $i$ 个源点可以提供 $P_i$ 的流量，第 $i$ 个汇点可以接收 $Q_i$ 个流量，第 $i$ 个源点到第 $j$ 个汇点的有向边的流量上限是 $c_{i,j}$，源点能流满当且仅当对于任意源点集合 $S$ 都有 $\sum_{u\in S}P_x\leq\sum_{v=1}^m\min\{\sum_{u\in S}c_{u,v},Q_v\}$。
 
 Pf: 考虑用最大流最小割定理，枚举割掉了超级源点向 $S$ 以外的每个源点的连边，剩下就是对每个汇点决策是直接割掉它到超级汇点的边还是割掉 $S$ 中源点到它的所有连边，这些决策间两两独立所以直接写出来就是右式，然后可以流满当且仅当恰好割掉超级源点到源点的所有连边是最小割，因此得到这个不等式限制。
 
-{% endfolding %}
+{% endcallout %}
 
 回到本题，假如我们要求大小为 $b_i$ 的盒子有 $x_i$ 个，那么就相当于 $P_i=a_i,\;c_{i,j}=x_j,\;Q_i=x_ib_i$。
 
@@ -377,7 +384,7 @@ $n,q\leq 5\times 10^5$
 
 ### Solution
 
-{% folding green:: Sol%}
+{% folding title="Sol" class="green" open=false %}
 
 把 $0$ 改成 $-1$ 后可以类似最大子段和去做，如果扫到当前位置这一段和 $<0$ 了就直接分出来重开一段，因此就是一个确定过程，具体来说是一个复合函数，直接从左到右对段扫描线，用平衡树维护即可，需要支持分裂、合并、推平和加。
 
@@ -395,7 +402,7 @@ $n\leq 2\times 10^4$
 
 ### Solution
 
-{% folding green:: Sol%}
+{% folding title="Sol" class="green" open=false %}
 
 容易发现只需求出 $\geq X$ 的位置中纵坐标的最小值（以及可以通过翻转得到的另外 $3$ 个问题），这也是双向规约的，因为你可以先用两次操作把另外三个边界锁死。
 
@@ -421,7 +428,7 @@ TL: 5s
 
 ### Solution
 
-{% folding green:: Sol%}
+{% folding title="Sol" class="green" open=false %}
 
 显然需要对 $2^64$ 个结点求出一个大小不小于 $2^51$ 的独立集，两个点 $u,v$ 连边当且仅当 $u$ 的状态可以通过异或上两条从左上到右下的不同路径得到 $v$ 的状态。
 
@@ -445,7 +452,7 @@ TL: 3s
 
 ### Solution
 
-{% folding green:: Sol%}
+{% folding title="Sol" class="green" open=false %}
 
 等价于将 $[1,n]$ 划分为不超过 $t=k+1$ 个子段最小化每段内二类边的边权和，因为边权是正数，考虑到单调性，将 $t$ 对 $n$ 取 $\min$ 后可以把不超过改成恰好。
 
@@ -461,7 +468,7 @@ TL: 3s
 
 ### Solution
 
-{% folding green:: Sol%}
+{% folding title="Sol" class="green" open=false %}
 
 ~~本来该有一期如何用 Static Top Tree + 二进制分组虚树 + 分散层叠 + Finger Search 击落数字树暴力的，大概是我上了无数个火箭毛毛虫使得朴素的 $\mathcal{O}(nd^2)$ 暴力优化到了 $\mathcal{O}(n\log^2(n)\alpha(n)$，但是太难写了而且一定跑不过，我们就不管它了~~
 
@@ -499,7 +506,7 @@ TL: 3s
 
 ### Solution
 
-{% folding green:: Sol%}
+{% folding title="Sol" class="green" open=false %}
 
 我们容易得到一个 $\mathcal{O}(n^2\log n)$ 的做法：
 
@@ -512,6 +519,7 @@ $$
 &\sum_{j=1}^{r-l+1}d_j=0
 \end{aligned}
 $$
+
 不难发现这相当于是在 $[l,r]$ 这段区间上选择一些位置是正的，一些位置是负的，另外一些为空，使得位置 $l$ 是正的而位置 $r$ 是负的，并构造出若干个二元组 $(x,y)$ 满足 $x<y$ 且位置 $x$ 是正的而位置 $y$ 是负的，且二元组间两两不相交（即不存在 $x_1<x_2<y_1<y_2$），且每个非空的位置都至少被选进某个二元组了，对于每个正的位置 $x$ 若其恰处于 $k$ 个二元组则带来 $\binom{a_x}{k}$ 倍的贡献。
 
 那我们倒着扫，记录还继续用于匹配的负的位置个数，并扫到一个位置尝试以其为 $r$ 加入贡献，用 NTT 优化卷积就容易写出来如下代码对于每个 $i$ 统计出 $l=i$ 的总方案数：
@@ -574,7 +582,7 @@ $n\leq 100$
 
 ### Solution
 
-{% folding green:: Sol%}
+{% folding title="Sol" class="green" open=false %}
 
 先取一下逆假装其实是 $g\circ f$。
 
@@ -596,7 +604,7 @@ $n\leq 10^5$
 
 ### Solution
 
-{% folding green:: Sol%}
+{% folding title="Sol" class="green" open=false %}
 
 要求点权不变看起来很麻烦，强化条件为要求每条边两种方向各流一次，即扫到 $i$ 时要求所有邻点的 $a_j$ 相等。
 
@@ -612,7 +620,7 @@ $n\leq 10^5$
 
 ### Solution
 
-{% folding green:: Sol%}
+{% folding title="Sol" class="green" open=false %}
 
 1h 会了但是写了 3h，感觉我的代码实现能力已经彻底没救了。
 
@@ -650,7 +658,7 @@ $n\leq 10^5$
 
 ### Solution
 
-{% folding green:: Sol%}
+{% folding title="Sol" class="green" open=false %}
 
 看起来操作就很难维护。
 
@@ -668,7 +676,7 @@ $n\leq 10^5$
 
 ### Solution
 
-{% folding green:: Sol%}
+{% folding title="Sol" class="green" open=false %}
 
 冷知识：三个 $0,1$ 变量至少两个 $1$ 的限制是 2-SAT。
 
@@ -688,7 +696,7 @@ $n\leq 10^5$
 
 ### Solution
 
-{% folding green:: Sol%}
+{% folding title="Sol" class="green" open=false %}
 
 这个题真神了。
 
@@ -724,7 +732,7 @@ $$
 
 ### Solution
 
-{% folding green:: Sol%}
+{% folding title="Sol" class="green" open=false %}
 
 来点暴力做法。
 
@@ -800,7 +808,7 @@ $$
 
 ### Solution
 
-{% folding green:: Sol%}
+{% folding title="Sol" class="green" open=false %}
 
 首先发现限制相当于给定一个点在根链上某个位置，于是写个平衡树就可以快速建出来一张图使得每个结点与祖先恰有两条连边（一条入边，一条出边，我们额外添加两个哨兵 $-\infty,+\infty$ 结点表示根链的开头和结尾）。
 
