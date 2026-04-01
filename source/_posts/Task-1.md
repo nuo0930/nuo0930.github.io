@@ -350,7 +350,7 @@ ML: 1GiB
 
 {% folding title="Sol" class="green" open=false %}
 
-{% callout type="info" title="霍夫曼定理" %}
+{% callout title="霍夫曼定理" %}
 
 > 有 $n$ 个源点和 $m$ 个汇点，第 $i$ 个源点可以提供 $P_i$ 的流量，第 $i$ 个汇点可以接收 $Q_i$ 个流量，第 $i$ 个源点到第 $j$ 个汇点的有向边的流量上限是 $c_{i,j}$，源点能流满当且仅当对于任意源点集合 $S$ 都有 $\sum_{u\in S}P_x\leq\sum_{v=1}^m\min\{\sum_{u\in S}c_{u,v},Q_v\}$。
 
