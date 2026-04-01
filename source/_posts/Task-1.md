@@ -3,6 +3,7 @@ title: Task 1
 date: 2026-03-31 14:58:00
 tags: 做题记录
 mathjax: true
+thumbnail: "/images/呐喊.png"
 ---
 
 三月做题记录。
