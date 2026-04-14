@@ -237,7 +237,7 @@ $n\leq 10,\\\; \vec{a}_i,\vec{b}_i,\vec{x_i}_j,m\leq 500$
 
 其实得知网络流标签后就会了啊！设 $V$ 是最大值，对值的限制就考虑切糕模型，$\vec{a}_i$ 对 $x$ check $\max$ 就是限制其不能小于 $x$，那你让连出这样一张图并加入蓝边就可以进行这个限制：
 
-![](/blog/source/images/arc176e_1.png)
+![](/images/arc176e_1.png)
 
 那你现在是两侧选一个做不小于 $x$ 的限制，因此对 $\vec{b}$ 也反着连一下，然后制造虚点 $p,q$，记 $\vec{a}_i$ 的 $x$ 点是 $u$，$\vec{b}_i$ 的则为 $v$，连 $(s,p,+\infty^\epsilon),(p,q,+\infty),(q,t,+\infty^\epsilon),(u,q,+\infty),(p,v,+\infty)$，这样一定会在两个 $+\infty^\epsilon$ 的边中割掉一个表示选择对另一边 check $\max$，最后再将答案减去 $+\infty^\epsilon m$ 即可。
 
