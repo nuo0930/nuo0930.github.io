@@ -3,7 +3,7 @@ title: 无处存储 Love RMQ Vers.
 date: 2026-04-16 13:45:24
 tags: ideas
 mathjax: true
-thumbnail: /images/continue.jpg
+thumbnail: /images/周防有希2.jpg
 ---
 
 本来想投给 CCPC Final 的结果不小心发现 08 年有篇论文也解决了这个问题，气死了就索性公开出来了。
