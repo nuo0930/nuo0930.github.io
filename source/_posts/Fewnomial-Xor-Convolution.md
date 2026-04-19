@@ -6,9 +6,23 @@ mathjax: true
 thumbnail: "/images/我们都拥有海洋.jpg"
 ---
 
-困死了暂时先不写做法了，不基于值域预处理的二次剩余替代离散对数做法来自乐零，具体可见他的论文。
+{% callout type="primary" title="Statement" class="custom-class" %}
 
-说不定晚点写下解析。
+对于一个奇素数 $P$，在环 $\mathbb{F}_P[x_1,x_2,\cdots,x_n]/(x_1^2-1,x_2^2-1,\cdots,x_n^2-1)$ 求
+
+$$
+\prod_{i=1}^m\sum_{j=1}^{d_i}a_j\prod_{k=1}^n x_k^{c_{i,j,k}}
+$$
+
+保证 $0\leq c_{i,j,k}<2$，且 $2^{d_i}$ 之和以及 $2^n$ 不大。
+
+{% endcallout %}
+
+不妨假定 $F_P$ 上的运算是 $\mathcal{O}(1)$ 的。
+
+朴素做法是对每个少项式做一次 FWT 再点乘起来求 IFWT，但是这样时间复杂度是 $\mathcal{O}(nm2^n)$ 的，并没有利用到 $2^{d_i}$ 之和不大的性质。
+
+(TBD)
 
 [模板](https://qoj.ac/problem/85)
 

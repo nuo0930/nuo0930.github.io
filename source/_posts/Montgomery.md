@@ -12,7 +12,7 @@ thumbnail: "/images/波奇2.jpg"
 
 ```cpp
 #ifndef RAINSTOP_MODINT
-//我喜欢王煜婷 QwQ
+//我喜欢雨停酱 QwQ
 #define RAINSTOP_MODINT
 #ifndef DEBUG
 #define NDEBUG
