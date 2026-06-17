@@ -6,7 +6,7 @@ mathjax: true
 thumbnail: /images/周防有希2.jpg
 ---
 
-本来想投给 CCPC Final 的结果不小心发现 08 年有篇论文也解决了这个问题，气死了就索性公开出来了。
+本来想试试投出去的结果不小心发现 08 年有篇论文也解决了这个问题，气死了就索性公开出来了。
 
 {% callout type="primary" title="Statement" class="custom-class" %}
 
